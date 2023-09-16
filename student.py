@@ -20,7 +20,7 @@ db_conn = connections.Connection(
 )
 output = {}
 table = 'student'
-s3=boto3.client('s3')
+
 
 #if call / then will redirect to that pg
 
@@ -32,7 +32,7 @@ def home():
 
 
 @app.route("/studentReg", methods=['POST'])
-def studentReg():
+def StudentReg():
     cohort = request.form['cohort']
     internPeriod = request.form['internPeriod']
     studName = request.form['studName']
@@ -57,7 +57,6 @@ def studentReg():
         
 
 
-        
 
     except Exception as e:
         return str(e) 
@@ -66,6 +65,7 @@ def studentReg():
     finally:
         cursor.close()
    
+    print("all modification done...")
     return render_template('StudRegisterOutput.html', name=studName)
 
 
