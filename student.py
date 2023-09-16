@@ -25,7 +25,6 @@ s3=boto3.client('s3')
 
 #if call / then will redirect to that pg
 
-@app.route("/", methods=['GET', 'POST'])
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -33,7 +32,7 @@ def home():
     return render_template('StudRegister.html')
 
 
-@app.route("/studentReg", methods=['GET','POST'])
+@app.route("/StudLogin", methods=['GET','POST'])
 def studentReg():
     cohort = request.form['cohort']
     intern_period = request.form['intern_period']
