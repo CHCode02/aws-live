@@ -31,25 +31,23 @@ def home():
 
 @app.route("/about", methods=['POST'])
 def about():
-    return render_template('Login.html') 
+    return render_template('StudRegister.html') 
 
 
 @app.route("/studentReg", methods=['POST'])
 def studentReg():
-    student_level = request.form['student_level']
     cohort = request.form['cohort']
-    programme = request.form['programme']
-    tutorial_group = request.form['tutorial_group']
+    intern_period = request.form['intern_period']
+    student_name = request.form['student_name']
     student_id = request.form['student_id']
+    student_ic = request.form['student_ic']
+    gender = request.form['gender']
+    programme = request.form['programme']
     student_email = request.form['student_email']
-    CGPA = request.form['cgpa']
+    student_contact = request.form['student_contact']
     uni_supervisor_name = request.form['uni_supervisor_name']
     uni_supervisor_email = request.form['uni_supervisor_email']
 
-    technical_knowledge = request.form['technical_knowledge']
-    database_knowledge = request.form['database_knowledge']
-    network_knowledge = request.form['network_knowledge']
-   
     insert_sql = "INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s |)"
     cursor = db_conn.cursor()
 
@@ -57,7 +55,7 @@ def studentReg():
 
     try:
 
-        cursor.execute(insert_sql, (student_level,cohort,programme,tutorial_group,student_id,student_email,CGPA,uni_supervisor_name,uni_supervisor_email))
+        cursor.execute(insert_sql, (cohort,intern_period,student_name,student_id,student_ic,gender,programme,student_email,student_contact,uni_supervisor_name,uni_supervisor_email))
         db_conn.commit()
         
 
