@@ -29,12 +29,7 @@ def home():
     return render_template('StudRegister.html')
 
 
-@app.route("/about", methods=['POST'])
-def about():
-    return render_template('StudRegister.html') 
-
-
-@app.route("/studentReg", methods=['POST'])
+@app.route("/studentReg", methods=['GET','POST'])
 def studentReg():
     cohort = request.form['cohort']
     intern_period = request.form['intern_period']
@@ -48,7 +43,7 @@ def studentReg():
     uni_supervisor_name = request.form['uni_supervisor_name']
     uni_supervisor_email = request.form['uni_supervisor_email']
 
-    insert_sql = "INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s |)"
+    insert_sql = "INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s )"
     cursor = db_conn.cursor()
 
      
@@ -67,7 +62,7 @@ def studentReg():
         cursor.close()
 
     print("all modification done...")
-    return render_template('StudLogin.html')
+    return render_template('StudentRegister.html', registerSuccessful=True)
 
 
 
