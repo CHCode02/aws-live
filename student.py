@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 from pymysql import connections
 import os
 import boto3
-from botocore.exceptions import ClientError
 from config import *
 
 app = Flask(__name__)
@@ -55,6 +54,7 @@ def studentReg():
 
         cursor.execute(insert_sql, (cohort,internPeriod,studName,studId,studIc,studGender,programme,studEmail,studContact,uniSupervisor,uniEmail))
         db_conn.commit()
+        
 
 
         
@@ -65,7 +65,8 @@ def studentReg():
 
     finally:
         cursor.close()
-    return render_template('StudRegister.html', registerSuccessful=True)
+   
+    return render_template('StudRegisterOutput.html', name=studName)
 
 
 
