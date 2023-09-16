@@ -8,11 +8,14 @@
 
     <meta name="generator" content="Nicepage 5.17.1, nicepage.com">
     <meta name="referrer" content="origin">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='nicepage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='StudRegister.css') }}">
+
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i">
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='nicepage.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='StudRegister.css') }}">
+    
     
 <style>
       #nav {
@@ -77,7 +80,7 @@
             <div class="u-form u-form-1">
 
 		    <!--Form here-->
-<form action="/studRegister"
+<form action="/StudRegister"
           class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="email"
           name="form-4" method="post">
 
@@ -176,8 +179,9 @@
           </p>
           <button type="submit"
             class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-radius-5 u-btn-2" style="margin: 1px 470px 11px;">I Accept</button>
+
 	      </form>
-		<a href="/" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-radius-5 u-btn-2" style="color: red; margin: 11px 465px 0px;">I decline</a>
+		<a href="/studLogin" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-radius-5 u-btn-2" style="color: red; margin: 11px 465px 0px;">I decline</a>
 
               </div>
             </div>
@@ -192,6 +196,7 @@
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-837d"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-align-left u-custom-font u-font-merriweather u-small-text u-text u-text-variant u-text-1"> © 2023 - TAR UMT FOCS ITP<span style="font-weight: 700;"></span>
         </p>
-      </div></footer>
+      </div>
+    </footer>
   
 </body></html>
