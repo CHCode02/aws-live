@@ -33,8 +33,6 @@ def home():
 
 
 @app.route("/studentReg", methods=['POST'])
-
-
 def studentReg():
     cohort = request.form['cohort']
     internPeriod = request.form['internPeriod']
@@ -67,9 +65,7 @@ def studentReg():
 
     finally:
         cursor.close()
-
-    print("all modification done...")
-    return render_template('StudLogin.html')
+    return render_template('StudRegister.html', registerSuccessful=True)
 
 
 
