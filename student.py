@@ -26,8 +26,7 @@ s3=boto3.client('s3')
 #if call / then will redirect to that pg
 
 @app.route("/", methods=['GET', 'POST'])
-def home():
-    return render_template('Home.html')
+
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
